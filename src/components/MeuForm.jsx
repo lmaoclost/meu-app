@@ -1,15 +1,35 @@
+import { useState } from "react";
+
 export function MeuForm() {
+  const [userName, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-    alert(`Bem vindo ${data.userName}`);
+    alert(`Bem vindo ${userName}`);
+    setUsername('');
+    setPassword('');
   }
+
+  const handleUserNameChange = (event) => {
+    setUsername(event.target.value);
+  }
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  }
+
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="userName" id="userName" />
-      <input type="password" name="password" id="password" />
+      <input type="text" name="userName" id="userName"
+        value={userName}
+        onChange={handleUserNameChange}
+      />
+      <input type="password" name="password" id="password"
+        value={password}
+        onChange={handlePasswordChange}
+      />
       <button type="submit">Clique Aqui</button>
     </form>
   )
