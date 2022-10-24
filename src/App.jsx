@@ -1,12 +1,12 @@
 import { Header } from './components/Header';
-import { Heading } from './components/OutroHeader';
+import { OutroHeader } from './components/OutroHeader';
 import './App.css';
 
-function App() {
+export function App() {
   return (
     <>
       <Header />
-      <Heading />
+      <OutroHeader />
     </>
   )
 }

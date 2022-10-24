@@ -1,7 +1,7 @@
-export function Heading() {
+export function OutroHeader() {
   return (
     <header className="header">
-      <h1>Meu Heading</h1>
+      <h1>Meu Outro Header</h1>
     </header>
   )
 }
