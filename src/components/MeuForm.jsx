@@ -4,12 +4,13 @@ export function MeuForm() {
 
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    alert(data.userName);
+    alert(`Bem vindo ${data.userName}`);
   }
   return (
     <form onSubmit={handleSubmit}>
       <input type="text" name="userName" id="userName" />
-      <button type="submit">Enviar</button>
+      <input type="password" name="password" id="password" />
+      <button type="submit">Clique Aqui</button>
     </form>
   )
 }
