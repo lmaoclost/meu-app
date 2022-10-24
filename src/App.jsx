@@ -1,6 +1,6 @@
 import { Header } from './components/Header';
 import { OutroHeader } from './components/OutroHeader';
-import { BemVindo } from './components/BemVindo';
+import { MeuForm } from './components/MeuForm';
 import './App.css';
 
 export function App() {
@@ -8,7 +8,7 @@ export function App() {
     <>
       <Header />
       <OutroHeader />
-      <BemVindo />
+      <MeuForm />
     </>
   )
 }
