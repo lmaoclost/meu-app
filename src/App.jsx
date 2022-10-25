@@ -1,18 +1,15 @@
-import { Header } from './components/Header';
-import { OutroHeader } from './components/OutroHeader';
-import { MeuForm } from './components/MeuForm';
-import './App.css';
+import { Users } from "./components/Users";
+import { useState } from "react";
+import "./App.css";
 
 export function App() {
-  const handleClick = (userName) => {
-    console.log(`Olá ${userName}`);
-  }
+  const [toggle, setToggle] = useState(false);
   return (
     <>
-      <Header />
-      <OutroHeader />
-      <MeuForm />
-      <button onClick={() => handleClick('Renan')}>Clique Aqui</button>
+      {toggle && <Users />}
+      <button onClick={() => setToggle(!toggle)}>
+        {toggle ? "Ocultar" : "Ver"} lista
+      </button>
     </>
-  )
+  );
 }
