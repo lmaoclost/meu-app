@@ -3,5 +3,5 @@ export function OutroHeader() {
     <header className="header">
       <h1>Meu Outro Header</h1>
     </header>
-  )
+  );
 }
