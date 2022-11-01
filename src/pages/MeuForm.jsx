@@ -1,23 +1,19 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
 
 export function MeuForm() {
   const [userName, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const { setUserName } = useContext(UserContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    alert(`Bem vindo ${userName}`);
+    setUserName(userName);
     setUsername("");
-    setPassword("");
   };
 
   const handleUserNameChange = (event) => {
     setUsername(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
   };
 
   return (
@@ -28,13 +24,6 @@ export function MeuForm() {
         id="userName"
         value={userName}
         onChange={handleUserNameChange}
-      />
-      <input
-        type="password"
-        name="password"
-        id="password"
-        value={password}
-        onChange={handlePasswordChange}
       />
       <button type="submit">Clique Aqui</button>
     </form>
