@@ -3,12 +3,11 @@ import { UserContext } from "../contexts/UserContext";
 import styles from "./Footer.module.css";
 
 export function Footer() {
-  const { userName } = useContext(UserContext);
-
+  const { contextUser } = useContext(UserContext);
   return (
-    <footer class={styles.footer}>
+    <footer className={styles.footer}>
       <div>
-        <h3>Bem vindo {userName}</h3>
+        <h3>Bem vindo {contextUser}</h3>
         <span>DH APP - Todos os direitos reservados</span>
       </div>
     </footer>

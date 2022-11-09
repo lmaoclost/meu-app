@@ -3,12 +3,11 @@ import { UserContext } from "../contexts/UserContext";
 
 export function MeuForm() {
   const [userName, setUsername] = useState("");
-  const { setUserName } = useContext(UserContext);
+  const { setContextUser } = useContext(UserContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    setUserName(userName);
+    setContextUser(userName);
     setUsername("");
   };
 
